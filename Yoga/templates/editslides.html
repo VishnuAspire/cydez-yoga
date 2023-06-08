@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+                <main class="mt-100 mb-100">
+                   <div class="container">
+                    <h1>SLIDES</h1>
+                   </div>
+                   
+                    <div class="container mt-100 mb-100">
+                       
+                    
+                      
+                      
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    
+                                    <div class="card-body">
+                                        <h5>UPDATE SLIDES</h5>
+                                        {% for i in r %}
+
+                                    <form method="POST" action="#" >{% csrf_token %}
+                                        
+                             
+                                        
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Title</label>
+                                            <input class="form-control" id="exampleFormControlInput1"type="text"  name='title' value="{{i.title}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">SubTitle</label>
+                                            <input class="form-control" id="exampleFormControlInput1"type="text"  name='subtitle' value="{{i.subtitle}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Description</label>
+                                            <textarea name="content" value="{{i.description}}" ></textarea> 
+                                        </div>
+                                       
+                                       
+                                        
+                                        <button class="btn btn-primary" type="submit">UPDATE</button>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                          {% endfor %}  
+                      
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </main>
+               
+ {% endblock %}

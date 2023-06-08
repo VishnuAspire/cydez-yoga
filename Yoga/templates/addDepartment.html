@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="mt-100 mb-100">
+    
+   
+ 
+     <div class="container mt-100 mb-100" >
+
+         <div class="row pr-5">
+             <div class="col-md-6" style="padding-top: 50px;">
+                 <div class="card">
+                   
+                     <div class="card-body" style="padding-top: 20px;">
+                         <h5>ADD DEPARTMENT</h5>
+                     <form  action="{% url 'addDepartment' %}" method="POST"">
+                         {% csrf_token %}
+                         <div class="form-group">
+                             <label for="department">Department Title</label>
+                             <input class="form-control" id="department" type="text" name='department' required>
+                         </div>
+
+                         <button class="btn btn-primary" type="submit">Add</button>
+                     
+
+                     </div>
+                 </div>
+             </div>
+         </form>
+         
+         <div class="p-5">
+             
+            <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'searchDepartment' %}">
+                {% csrf_token %}
+                        <div class="form-group pl-5" >
+                            <input class="form-control" id="search"  name="search" type="text" placeholder="Search department Title" >
+                             <button class="btn btn-primary " type="submit">Search</button>
+                        </div>
+                </form>
+            
+         <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Department Name</th>
+                    <th>Show</th>
+                    <th>Delete</th>
+           
+                </tr>
+                {% for i  in department_values %}
+                                                
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.department}}</td>
+                    <td>
+                        <a href="{% url 'updateDepartment' departmentid=i.id %}"><i class="fa fa-edit" type="submit"></i></a>
+                    </td>
+                    <td><a href="{% url 'deleteDepartment' departmentid=i.id %}"><i class="fa fa-trash" type='submit'></i></a></td>
+                </tr>
+                {% endfor %}
+                <div class="">
+                    <span class="">
+                        {% if department_values.has_previous %}
+                        <a href="?page={{department_values.previous_page_number}}">Previous</a>
+                        {% endif %}
+                        <span class="">
+                            Page {{department_values.number}} of {{department_values.paginator.num_pages}}.
+                        </span>
+                        {% if department_values.has_next %}
+                        <a href="?page={{department_values.next_page_number}}">>></a>
+                        {% endif %}
+                    </span>
+                </div>
+             </table>
+            </div>
+     
+         </div>
+         </div>
+         </div>
+     </div>
+ </main>
+
+
+
+{% endblock %}

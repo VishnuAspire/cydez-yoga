@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+                <main class="mt-100 mb-100">
+                   <div class="container">
+                    <h1>LEVELS</h1>
+                   </div>
+                   
+                    <div class="container mt-100 mb-100">
+                       
+                    
+                      
+                      
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    
+                                    <div class="card-body">
+                                        <h5>UPDATE PROGRAMS</h5>
+                                        {% for i in r %}
+
+                                    <form method="POST" action="#" enctype="multipart/form-data">{% csrf_token %}
+                                        
+                             
+                                        
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Level</label>
+                                            <input class="form-control" id="exampleFormControlInput1"type="text"  name='level' value="{{i.level}}" required>
+                                        </div>
+                                       
+                                        <button class="btn btn-primary" type="submit">UPDATE</button>
+                                        <div class="form-group">
+                                           
+                                           
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                          {% endfor %}  
+                      
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </main>
+               
+ {% endblock %}

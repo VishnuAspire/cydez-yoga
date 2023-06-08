@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+                <main class="mt-100 mb-100">
+                   <div class="container">
+                    <h1>PROGRAMS</h1>
+                   </div>
+                   
+                    <div class="container mt-100 mb-100">
+     
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    
+                                    <div class="card-body">
+                                        <h5>UPDATE PROGRAMS</h5>
+                                        {% for i in i %}
+
+                                    <form method="POST" action="#" enctype="multipart/form-data">{% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Title</label>
+                                            <input class="form-control" id="exampleFormControlInput1" type="text" name='title' value="{{i.title}}" required>
+                                        </div>
+                                       
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Day</label>
+                                            <input class="form-control" id="exampleFormControlInput1" type="number"  name='day' value="{{i.day}}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Video Duration</label>
+                                            <input class="form-control" id="exampleFormControlInput1" type="number"  name='video_duration' value="{{i.video_duration}}" required>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <label for="exampleFormControlInput1">Number Of Classes</label>
+                                            <input class="form-control" id="exampleFormControlInput1" type="number"  name='numberofclass' value="{{i.numberofclass}}">
+                                        </div> -->
+                             
+                                        <!-- <div class="form-group">
+                                            <label for="exampleFormControlInput1">Style</label>
+                                            <input class="form-control" id="exampleFormControlInput1"type="text"  name='style' value="{{i.style}}">
+                                        </div> -->
+                                        
+                                        <div class="form-group">
+                                       
+                                            <label for="exampleFormControlInput1">Category</label>
+                                            <select  class="form-control" id="exampleFormControlInput1" name="category" required >
+                                                <option value="" selected="">Select</option>
+                                                
+                                                 {% for k in c %}
+                                                 
+                                                <option value="{{k.id}}" {% if k.id == i.category.id %} selected {%endif %}>{{k.category}}</option>
+                                                
+                                                {% endfor %}
+                                               </select>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <label for="exampleFormControlInput1">Level</label>
+                                            <select  class="form-control" id="exampleFormControlInput1" name="level" >
+                                                <option value="" selected="">Select</option>
+                                                 {% for i in l %}
+                                                 
+                                                <option value="{{i.level}}">{{i.level}}</option>
+                                                
+                                                {% endfor %}
+                                               </select>
+                                        </div> -->
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Introduction</label>
+                            
+                                            <textarea  name="content" value="{{i.introduction}}" type="text" >{{i.introduction}}</textarea> 
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Video Url</label>
+                                            <input class="form-control" id="exampleFormControlInput1" type="text"  name='videourl' value="{{i.video_url}}" required>
+                                        </div>
+                                        <label for="exampleFormControlInput1">Image</label>
+                                        <div class="form-group">
+                                            
+                                            <img src = "{{ i.image.url }}" alt="" style="max-width: 150px; max-height: 150px; width: 50%;">
+                                            <input class="form-control" id="exampleFormControlInput1" type="file"  name='image' value="{{i.image}}">
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <label for="exampleFormControlSelect1">Status</label>
+                                            <select class="form-control" id="exampleFormControlSelect1" name='status'>
+                                              <option>Pending</option>
+                                              <option>Approved</option>
+                                            </select>
+                                        </div> -->
+                                        <button class="btn btn-primary" type="submit">UPDATE</button>
+                                        <div class="form-group">
+                                           
+                                           
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                          {% endfor %}  
+                      
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </main>
+                
+ {% endblock %}

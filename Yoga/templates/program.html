@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<main class="mt-100 mb-100">
+    <div class="container">
+     <h1>ADD</h1>
+     <button> <a href="{% url 'list_program' %}"  ><i class="fas fa-align-justify" type='submit'></i> All Programs</a></button>
+
+    </div>
+    
+ 
+     <div class="container mt-100 mb-100">
+
+         <div class="row">
+             <div class="col-md-12">
+                 <div class="card">
+                     
+                     <div class="card-body">
+                         <h5>ADD PROGRAMS</h5>
+                     <form method="POST" action="{% url 'add_program' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                         <div class="form-group">
+                             <label for="exampleFormControlInput1">TITLE</label>
+                             <input class="form-control" id="exampleFormControlInput1" type="text" name='title'>
+                         </div>
+                         
+                         <div class="form-group">
+                             <label for="exampleFormControlInput1">Day</label>
+                             <input class="form-control" id="exampleFormControlInput1" type="number"  name='day'>
+                         </div>
+                         <div class="form-group">
+                            <label for="exampleFormControlInput1">Video Duration</label>
+                            <input class="form-control" id="exampleFormControlInput1" type="number" placeholder="Enter video duration in minutes"  name='video_duration'>
+                        </div>
+                         <div class="form-group">
+                             <label for="exampleFormControlInput1">CATEGORY</label>
+                             <select  class="form-control" id="exampleFormControlInput1" name="category" >
+                                <option value="" selected="">Select</option>
+                                 {% for i in c %}
+                                 
+                                <option value="{{i.category}}">{{i.category}}</option>
+                                
+                                {% endfor %}
+                               </select>
+                         </div>
+                         <div class="form-group">
+                             <label for="exampleFormControlInput1">INTRODUCTION</label>
+                             <textarea name="content" type="text" ></textarea> 
+                         </div>
+                         <div class="form-group">
+                             <label for="exampleFormControlInput1">Video Urls</label>
+                             <input class="form-control" id="exampleFormControlInput1" type="text"  name='videourl'>
+                         </div>
+                       
+                         <div class="form-group">
+                             <label for="exampleFormControlInput1">Image</label>
+                             <input class="form-control" id="exampleFormControlInput1" type="file"  name='image'>
+                         </div> 
+                        
+                         <button class="btn btn-primary" type="submit">SUBMIT</button>
+                         <div class="form-group">
+                            
+                            
+
+                         </div>
+
+                     </div>
+                 </div>
+             </div>
+             
+         </form>
+             
+     
+         </div>
+         </div>
+         </div>
+     </div>
+     <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="programBought">
+    
+        <div class="modal-dialog signInBox" style="padding-left: 150px;">
+        <div class="modal-content" style="width: 50%;">
+          <div class="modal-header">
+            <button type="button" class="close closeBtn1" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" style="color: red;">{{ extra.heading }}</h4>
+          </div>
+          <div class="modal-body">
+            <div style="height: 100%;color: rgb(121, 121, 129);">{{ extra.msg }}</div>
+          </div>
+    
+        </div>
+      </div>
+    
+    </div>
+        <a href="#programBoughtAlert"  data-toggle="modal" data-target="#programBought" id="programBoughtAlert"></a>
+    
+    </section>
+    {% if extra.popup %}
+    <script >
+        alert(11111111111111)
+    document.getElementById('programBoughtAlert').click()
+    alert(2222222222222222)
+    </script>
+    {% endif %}
+ </main>
+
+
+
+{% endblock %}

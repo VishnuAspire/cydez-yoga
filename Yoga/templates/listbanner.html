@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .previous{
+        padding: 10px;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    border-radius: 20px;
+    }
+    .paginate_button{
+        padding: 10px;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    }
+    .next{
+        padding: 10px;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    border-radius: 20px;
+    }
+   .dataTables_paginate{
+        margin-bottom: 10px !important;
+    }
+    .paging_simple_numbers{
+        margin-top: -25px !important;
+    }
+</style>
+                <main class="mt-100 mb-100">
+                   <div class="container">
+                    <h1>ALL SLIDES</h1>
+                   </div>
+                   
+                
+                    <div class="container mt-100 mb-100">
+                       
+                    
+                        <button><a href="{% url 'add_slides' %}"  ><i class="fas fa-align-justify" type='submit'></i>Add New</a></button>
+                        
+                        <button> <a href="{% url 'list_slides' %}"  ><i class="ti-plus" type='submit'></i> All Slides</a></button>
+                    
+                        <!-- <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'searchSlide' %}">
+                            {% csrf_token %}
+                                
+                                    <div class="form-group"  style="padding-left: 50rem;">
+                                        <input class="form-control" id="search" name="search" type="text" placeholder="Search by Title"> <button class="btn btn-primary" type="submit">search</button>
+                                    </div>
+                            </form> -->
+                            <div class="container mt-100 mb-100">                    
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card mb-4">
+                                            <div class="card-body">
+                                                <h5>LIST SLIDES</h5>
+                                                <div class="row">
+                                                    <div class="col-xl-12">
+                                                        <div class="table01">
+                                                            <table id="table1">
+                                                                <div class="col-xl-3">
+                                                                    </div>          
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Title</th>
+                                                                        <th>SubTitles</th>
+                                                                        <th>Description</th>
+                                                                        
+                                                                       
+                                                                       
+                                                                        <th>Update</th>
+                                                                        <th>Delete</th>
+                        
+                                                                        
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="searchResult">
+                                                                    {% for i in showslides %}
+                                                
+                                                                        <tr>
+                                                                            <td>{{i.title}}</td>
+                                                                            <td>{{i.title}}</td>
+                                                                            <td>{{i.description}}</td>
+                                                                        
+                                                                        
+
+                                                                            <td>
+                                                                                <button><a href="{% url 'editSlides' userid=i.id %}"><i class="fa fa-edit" type="submit"></i></a></button>
+                                                                            </td>
+                                                                    
+                                                                            <td><a href="{% url 'deleteSlides' userid=i.id %}"><i class="fa fa-trash" type='submit'></i></a></td>
+                                                                    
+                                                                        </tr>
+                                                                        
+                                                                        {% endfor %}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+                                            <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" defer></script>
+                                            <script>
+                                                $(document).ready(function () {
+                                                    $('#table1').DataTable({
+                                                        "lengthChange": false,
+                                                        "pageLength": 30,
+                                                        "ordering":false
+                                                    });
+                                                });
+                                            </script> 
+                </main>
+               
+{% endblock %}

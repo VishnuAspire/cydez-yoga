@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="mt-100 mb-100">
+   
+   
+ 
+     <div class="container mt-100 mb-100">
+
+         <div class="row">
+             <div class="col-md-6"  style="padding-top: 50px;">
+                 <div class="card">
+                   
+                     <div class="card-body">
+                         <h5>ADD DOCTOR</h5>
+                     <form  action="{% url 'addDoctor' %}" method="POST"">
+                         {% csrf_token %}
+                         <div class="form-group">
+                             <label for="department">Doctor Name</label>
+                             <input class="form-control" id="doctor"  type="text" name='doctor'>
+                         </div>
+                         <select  class="form-control" id="departmentSelect" name="departments"  required>
+                            <option value="" selected="">---Select Department---</option>
+                            {% for i in department_values %}
+                            <option value="{{i.department}}">{{i.department}}</option>
+                            {% endfor %}
+                           </select>
+                           <div class="pt-5">              
+                         <button class="btn btn-primary" type="submit">Add</button>
+                        
+
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </form>
+         <div class="p-5">
+            <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'searchDoctor' %}" style="padding:0px;margin-bottom: 10px 0px !important;">
+                {% csrf_token %}
+                        <div class="form-group pl-5" style="width: 100%;height: 100%;padding: 0px !important;display: flex;justify-content: center;align-items: center;">
+                            <input class="form-control" id="search"  name="search" type="text" placeholder="Search Doctor name" style="width: 60%;border-top-right-radius: 0;border-bottom-right-radius: 0;">
+                             <button class="btn btn-primary " type="submit" style="border-left: none;border-top-left-radius: 0;border-bottom-left-radius: 0;">Search</button>
+                        </div>
+                </form>
+       
+            <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0" style="margin-top: 20px;">
+               <thead>
+                   <tr>
+                       <th>ID</th>
+                       <th>Department Name</th>
+                       <th>Show</th>
+                       <th>Edit/Delete</th>
+              
+                   </tr>
+                   {% for i  in doctor_values %}
+                                                   
+                   <tr>
+                      <td>{{i.id}}</td>
+                      <td>{{i.department}}</td>
+                      <td>{{i.doctor}}</td>
+                      <td style="text-align: center;">
+                        <a href="{% url 'updateDoctor' doctorid=i.id %}"><i class="fa fa-edit" type="submit"></i></a>
+                        &nbsp;&nbsp;
+                        <a href="{% url 'deleteDoctor' doctorid=i.id %}"><i class="fa fa-trash" type='submit'></i></a>
+                      </td>
+                   </tr>
+                   {% endfor %}
+                </table>
+                <div class="">
+                    <span class="">
+                        {% if doctor_values.has_previous %}
+                        <a href="?page={{doctor_values.previous_page_number}}">Previous</a>
+                        {% endif %}
+                        <span class="">
+                            Page {{doctor_values.number}} of {{doctor_values.paginator.num_pages}}.
+                        </span>
+                        {% if doctor_values.has_next %}
+                        <a href="?page={{doctor_values.next_page_number}}">>></a>
+                        {% endif %}
+                    </span>
+                </div>
+               </div>     
+         </div>
+         </div>
+         </div>
+     </div>
+ </main>
+
+
+
+{% endblock %}

@@ -1,0 +1,1013 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" href="{% static 'home/assets/images/fav.gif" type="image/gif" />
+
+	<title>Online Yoga classesand Training - Yoga at home with Kerala Yoga Training</title>
+
+
+	<link href="{% static 'home/assets/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet" />
+	<link href="{% static 'home/assets/css/datepicker.css' %}" type="text/css" rel="stylesheet" />
+	<link href="{% static 'home/assets/css/font-awesome.min.css' %}" type="text/css" rel="stylesheet" />
+
+	<!-- Owl Carousel Assets -->
+	<link href="{% static 'home/assets/css/owl.carousel.css' %}" rel="stylesheet">
+	<link href="{% static 'home/assets/css/owl.theme.css' %}" rel="stylesheet">
+
+	<!--Begin Body Slider -->
+	<link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/BgSlider1.css' %}" />
+	<!--End Body Slider ---->
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+    
+	<!--begin for gallery popup-->
+	<link rel="stylesheet" href="{% static 'home/assets/css/lightbox.css' %}" media="screen" />
+	<link href="{% static 'home/assets/css/style.css' %}" type="text/css" rel="stylesheet" />
+	<link href="{% static 'home/assets/css/style-inner.css' %}" type="text/css" rel="stylesheet" />
+	<script src="{% static 'home/assets/js/jquery-1.11.1.js' %}" type="text/javascript"></script>
+	<script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
+	<style>
+		 .skdfh{
+			margin: -60px;
+   			margin-top:auto
+  }
+	</style>
+</head>
+
+<body id="backToTop">
+
+	<header class="header">
+
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-2 col-xs-5">
+					<div class="logo text-dark titikL">
+						<!-- <h3><b>CYDEZ YOGA</b></h3> -->
+						<img src="{% static 'home/assets/images/logo high res.png' %}" class="logobspof"/>
+						<!-- <img src="{% static 'home/assets/images/logo 200x200-01.png' %}"/> -->
+
+						
+					</div>
+					<!--logo-->
+				</div>
+				<!--col-->
+
+				<div class="col-md-9 col-sm-10 col-xs-12">
+					<div class="row topContactRow">
+						<div class="topContact signArea">
+							<div class="logBox">
+
+								{% if not user.is_authenticated %}
+                                <a class="joinUs" data-toggle="modal" data-target="#sign_up">Join Us</a>
+								<a  class="joinUs" data-toggle="modal" data-target="#myModal">Sign In</a>
+                                {% endif %}
+
+							</div>
+							<!--logBox-->
+
+							<div class="languageRow">
+
+								<div class="topSocial">
+									<ul class="topSocial">
+										<li><a href="https://m.facebook.com/profile.php?ref=wizard" target="blank"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="https://www.instagram.com/titikshayogaatelier/" target="blank"><i class="fa fa-instagram"></i></a></li>
+										<li><a href="https://twitter.com/AtelierEyoga" target="blank"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="https://www.youtube.com/channel/UCmPOUsXeqEbj-J5xHUEfZGA" target="blank"><i class="fa fa-youtube"></i></a></li>
+									</ul>
+								</div>
+								<!--topSocial-->
+
+
+							</div>
+							<!--languageRow-->
+
+						</div>
+						<!--topContact-->
+						<div class="topContact">
+							<figure><span><i class="fa fa-map-marker"></i></span></figure>
+							<figcaption>
+								<h3 style="color: #45e9e8;">Titiksha eYoga Atelier</h3>
+								<p style="color: #45e9e8;">COTTON HILL ROAD, VAZHUTHACAUD</p>
+								<p style="color: #45e9e8;"> TRIVANDRUM 695014</p>
+							</figcaption>
+						</div>
+						<!--topContact-->
+						<div class="topContact">
+							<figure><span><i class="fa fa-phone"></i></span></figure>
+							<figcaption>
+								<h3 style="color: #45e9e8;">+91–6282670673 </h3>
+								<p style="color: #45e9e8;">Call Us Today</p>
+							</figcaption>
+						</div>
+						<!--topContact-->
+					</div>
+					<!--topContactRow-->
+
+
+
+				</div>
+				<!--col-->
+			</div>
+			<!--row-->
+
+		</div>
+		<!--container-->
+		<nav class="mainNav">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<!--Begin Toop nav------------------------------------------------------ -->
+						<nav class="navbar navbar-default sticky">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+									data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+									<a class="menu_trigger" id="nav-icon1"><span></span><span></span><span></span></a>
+								</button>
+							</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<div class="fixedLogo"><a href="{% url 'home' %}"><img
+											src="{% static 'home/assets/images/yoga landscape.png' %}" /></a></div>
+								<ul class="nav navbar-nav">
+									<li class="dropdown"><a href="{% url 'home' %}">Home</a></li>
+									<li class="dropdown"><a  href="{% url 'about_us' %}">About Us </a>
+										
+									</li>
+									<!-- <li class="dropdown"><a href="#prgm">Programmes<span><i class="fa fa-caret-down"></i></span> </a>
+										<ul class="dropdown-menu">
+											{% for i in all_programs %}
+											<li class="programMenu">
+												<a class="programMenu" href="{% url 'eachProgram' pid=i.id  %}">{{i.title}}</a>
+											</li>
+											{% endfor %}
+										</ul>
+
+									</li> -->
+									<li class="dropdown"><a href="{% url 'listallprograms' %}">Programmes</a></li>
+									<li class="dropdown"><a href="{% url 'appoinment' %}">Appointments</a></li>
+									<li class="dropdown">
+										<a href="{% url 'pricedetails' %}">Price Details</a></li>
+
+									<li class="dropdown"><a href="{% url 'contact' %}" class="padR0">Contact Us</a></li>
+									<li class="dropdown mobm"><a href="{% url 'logoutuser' %}" class="padR0">Logout</a></li>
+
+								</ul>
+							</div>
+							<!-- /.navbar-collapse -->
+						</nav>
+						<!--End Toop nav------------------------------------------------------ -->
+					</div>
+					<!--col-->
+
+				</div>
+				<!--row-->
+			</div>
+			<!--container-->
+
+			{%  if user.is_authenticated %}
+            <div style="position: absolute;right:10px;top:0px;display: flex;justify-content: center;align-items: center;height: 100%;min-width:200px;">
+
+                <div>Welcome, {{ user.get_full_name|title }}</div>
+                &nbsp;
+                <span style="font-family: initial;font-weight: 700;">|</span>
+                &nbsp;
+                <a href="{% url 'logoutuser' %}">Logout</a>
+                
+            </div>
+            {% endif %}
+            
+		</nav>
+
+
+	</header>
+
+	{% block content %}
+	{% endblock %}
+
+	<section class="banner">
+
+		<ul class="cb-slideshow">
+			<li><span>Image 01</span></li>
+			<li><span>Image 02</span></li>
+			<li><span>Image 03</span></li>
+			<li><span>Image 04</span></li>
+			<li><span>Image 05</span></li>
+			<li><span>Image 06</span></li>
+		</ul>
+
+		<div class="container slideBoxContainer">
+			<!-- <div class="slideBox">
+				<h1>Yoga as a Lifestyle</h1>
+				<h3>Yoga has always been something more</h3>
+				<h5>a very holistic approach to health.</h5>
+				<a href="{% url 'pricedetails' %}" class="moreD">More Details</a>
+			</div> -->
+			<div class="slideBox">
+				<h2>Need  to improve your physical and emotional wellbeing and be happier?</h2>
+				<h3></h3>
+				<h5>If so,
+					Titiksha eYoga atelier is with you as a doctor and guide</h5>
+			</div>
+			<!--slideBox-->
+		</div>
+		<!--container-->
+
+
+	</section>
+	{% if k %}
+	<section class="productBlock" id="prgm">
+		<div class="container">
+			<div class="row1">
+				<h1 class="mainTitle">Programme Categories</h1>
+			</div>
+			<!--row1-->
+			<div class="row">
+
+				<div class="col-md-12">
+					<div id="owl-demo1" class="owl-carousel wow fadeInDown slide1" data-wow-duration=".8s">
+						{% for c in Categories %}
+						{% if c.program_set.exists %}
+						<div class="item">
+							<a href="{% url 'Categories' catid=c.id %}">
+								<div class="proBox" style="position: relative;">
+
+									<figure style="border-color: #01bdfd;"><img class="skdfh" src="{{ c.image.url }}" width="100%" /></figure>
+
+									<h2>{{c.category}} </h2>
+
+									{% if c in user_cat %}
+									<div style="position: absolute;left: 0px;top: 0px;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;">
+										<img src="{% static 'home/images/ribbon.png' %}" style="width: 100%;">
+									</div>
+									{% endif %}
+
+								</div>
+								<!--proBox-->
+							</a>
+						</div>
+						{% endif %}
+						{% endfor %}
+
+					</div>
+					<!--owl-carousel-->
+				</div>
+				<!--col-->
+
+			</div>
+			<!--row-->
+		</div>
+		<!--container-->
+	</section>
+	{% endif %}
+	<section class="infoBlock">
+
+		<div class="container innerCo">
+			<div class="col-md-7 col-sm-7">
+				<div class="infoContent" >
+					<h1 style="color: #0d4554;">
+						Yoga as a Way of Life
+					</h1>
+					<p style="color: #0d4554;">
+						The primary goal of Yoga is to gain balance and control in one’s life; 
+						to free oneself from confusion and distress; 
+						to provide a sense of calm that comes from the practice of yogic asanas and pranayama or the breathing practices.
+						Yoga improves posture, increases the intake of oxygen and enhances the functioning of all body systems,
+						including respiratory, digestive, endocrine, reproductive and excretory systems.
+						The ultimate goal of Yoga is self-realization.
+					</p>
+					<ul class="lifeStyleList">
+						<li><a class="anim" style="color: #0d4554;">Shield against disease</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="anim" style="color: #0d4554;"> Refreshed body</a></li>
+						<br>
+						<li><a class="anim" style="color: #0d4554;">Fitness and flexibility  </a>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="anim" style="color: #0d4554;">Peace of mind</a></li>
+						<br>
+						<li><a class="anim" style="color: #0d4554;"> Weight loss aid</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="anim" style="color: #0d4554;">Slows aging</a></li>
+						</li>
+
+					</ul>
+
+				</div>
+				<!--infoContent-->
+			</div>
+			<!--col-->
+		</div>
+
+		<div class="row">
+			<div class="infoRow">
+
+
+				<div class="col-md-5 col-sm-5 pull-right infoPic">
+					<figure><img src="{% static 'home/assets/images/image 3 resized.png' %}" /></figure>
+				</div>
+				<!--col-->
+
+			</div>
+			<!--infoRow-->
+		</div>
+		<!--row-->
+
+
+	</section>
+
+
+	{% if k %}
+	<section class="pgmBlock">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="mainTitle">
+						Yoga and Meditation Programmes Guide
+					</h1>
+					<div class="classRow">
+						<div class="pgmRow">
+							<div id="owl-demo3" class="owl-carousel wow fadeInUp slide2" data-wow-duration=".8s">
+
+									{% for i in k %}
+
+									<div class="item">
+									<a href="{% url 'eachProgram' pid=i.id  %}">
+
+										<div class="classBox innerPgmBox">
+
+											<figure><img src="{{ i.image.url }}" style="width: 250px; height: 150px;" />
+												
+
+											</figure>
+											<figcaption class="anim">
+												<h3>{{i.title}}</h3>
+												<span> {{i.video_duration}} Minutes </span>
+											</figcaption>
+
+										</div>
+
+										<!--classBox-->
+									</a>
+								</div>
+									{% endfor %}
+									<!--col-->
+								</div>
+						
+							<!--item-->
+						</div>
+						<!--owl-carousel-->
+
+					</div>
+					<!--pgmRow-->
+
+					
+					<!--moreVideo-->
+
+
+				</div>
+				<!--col-->
+
+			</div>
+			<!--row-->
+		</div>
+		<!--container-->
+	</section>
+	{% endif %}
+
+
+	<section class="infoBlock infoBlock-2" >
+
+		<div class="container innerCo"  >
+			<div class="col-md-7 col-sm-7 pull-right" >
+				<div class="infoContent infoContent-2"  >
+					<h1 style="color: #73d5fc;">How does titiksha eYoga atelier help to keep you fit?</h1>
+					<p style="color: #73d5fc;">Fitness depends as much on the state of mind as on the state of the body.
+					A well balanced diet, healthy frame of mind and an appropriate yoga routine can go a long way to keep you fit.
+					To experience the classic yoga, it is best to learn with an adept and qualified yoga consultant.
+					Titiksha eyoga atelier not only teaches you classic yoga the right way, but also offers a platform for personal consultation and treatment modalities with an optimum mix of yoga and naturopathy</p>
+					<!-- <a  class="moreD moreD2">Read More</a> -->
+
+				</div>
+				<!--infoContent-->
+			</div>
+			<!--col-->
+		</div>
+
+		<div class="row">
+			<div class="infoRow infoRow-2" style="margin-bottom: 0;">
+				<div class="col-md-5 col-sm-5 infoPic">
+					<figure><img src="{% static 'home/assets/images/yoga image 1.png' %}" /></figure>
+				</div>
+				<!--col-->
+
+			</div>
+			<!--infoRow-->
+		</div>
+		<!--row-->
+
+
+	</section>
+
+
+	<section class="newsLetter">
+		<div class="container">
+			<div class="newsBox">
+				<p><span class="signSim"></span></p>
+				<h1 class="mainTitle">Access to programmes</h1>
+				<h3>AND ENJOY THE DAILY YOGA CLASSES!</h3>
+				<!-- <form method="POST"> -->
+					<div class="form-group">
+						<!-- <input type="email" name="mail" class="newsText" placeholder="Enter your email" required /> -->
+						<a href="#" data-toggle="modal" data-target="#sign_up">
+							<button type="submit" class="newsBtn">Signup!</button>
+						</a>
+						
+					</div>
+				<!-- </form> -->
+			</div>
+			<!--newsBox-->
+
+		</div>
+		<!--container-->
+
+	</section>
+
+	<script type="text/javascript">
+		// When the document is ready
+		$(document).ready(function () {
+			$('#mainform').submit(function (e) {
+				e.preventDefault();
+				$.ajax({
+					url: "http://yogademo.kruxsoft.in/app/Home/savedata.html",
+					dataType: "html",
+					method: "POST",
+					//enctype: 'multipart/form-data',
+					data: $(this).serialize(),
+					delay: 250,
+					success: function (res) {
+						//alert(res);
+						if (res == "success") {
+
+							alert("Newsletter Successfully Updated");
+
+						}
+						else {
+							alert("Server error occured....");
+
+						}
+					}
+				});
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#loadme").click(function (e) {
+				$("#loadme").attr('style', '');
+				$("#loadme").html('');
+			});
+			$("#mainform").submit(function (e) {
+				$("#loadme").attr('style', 'position: absolute;left: 0;top: 0;margin:auto; width: 100%;height: 100%;background: rgba(0,0,0,0.7);z-index: 10;vertical-align:middle;');
+				$("#loadme").html('<div style="top: 25%;position: absolute;text-align: center;margin: 0px auto;left: 0;right: 0;"><div class="loader animation-start"><span class="circle delay-1 size-2"></span><span class="circle delay-2 size-4"></span><span class="circle delay-3 size-6"></span><span class="circle delay-4 size-7"></span><span class="circle delay-5 size-7"></span><span class="circle delay-6 size-6"></span><span class="circle delay-7 size-4"></span><span class="circle delay-8 size-2"></span></div></div>');
+				e.preventDefault();
+				for (instance in CKEDITOR.instances) {
+					CKEDITOR.instances[instance].updateElement();
+				}
+				var formData = new FormData($("form#mainform")[0]);
+				$.ajax({
+					url: "http://yogademo.kruxsoft.in/app/programs/savedata1.html",
+					dataType: "html",
+					method: "POST",
+					data: formData,
+					enctype: 'multipart/form-data',
+					delay: 250,
+					async: false,
+					cache: false,
+					contentType: false,
+					processData: false,
+					success: function (res) {
+						//alert(res);
+						if (res == "success") {
+
+							$("#submitststs").html('<div class="alert alert-success icons-alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="icofont icofont-close-line-circled"></i></button><p><strong>Success!</strong> Record has saved successfully.</p></div>');
+							$('#mainform')[0].reset();
+							for (instance in CKEDITOR.instances) {
+								CKEDITOR.instances[instance].updateElement();
+							}
+							CKEDITOR.instances[instance].setData('');
+							$("#loadme").attr('style', '');
+							$("#loadme").html('');
+							$('html, body').animate({
+								scrollTop: "0px"
+							}, 800);
+							if ($("#operation").val() == 2) {
+								$(window).attr("location", 'programs/savedata1.html');
+							}
+						}
+						else {
+							$("#submitststs").html('<div class="alert alert-danger icons-alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="icofont icofont-close-line-circled"></i></button><p><strong>Sorry!</strong> Sorry unable to store data. Please check all the data.</p></div>');
+							$("#loadme").attr('style', '');
+							$("#loadme").html('');
+							$('html, body').animate({
+								scrollTop: "0px"
+							}, 800);
+						}
+					}
+				});
+			});
+		});
+	</script>
+
+	<footer class="footer">
+		<div class="container" id="Contact">
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<h2>About Us</h2>
+
+					<figcaption class="ftrAbout">
+						<p>Titiksha is the “endurance of all afflictions without countering aids, and without anxiety or lament.” Titiksha is the first step to interiorizing the mind, and to bringing its reactions under control. The means to achieve titiksha is the practice of Yoga. Titiksha eYoga atelier conceptualized by Dr Sreekavya S.H, BNYS,PGDEMS, MSC(DFSM) strives to achieve the art of ‘titiksha’ among the masses through the general yoga modules, therapeutic yoga modules as well as the customized yoga modules.</p>
+					</figcaption>
+
+				</div>
+				<!--col-->
+
+				<div class="col-md-3 col-sm-3">
+					<div class="ftrLinkBlock">
+						<h2>Main Links</h2>
+						<ul class="ftrLinks">
+							<li><a href="{% url 'home' %}" class="anim">Home</a></li>
+							<li><a href="{% url 'specialoffers' %}" class="anim">Offers</a></li>
+
+							<li><a href="{% url 'appoinment' %}">Appointments</a></li>
+
+							<li><a href="{% url 'pricedetails' %}">Price Details</a></li>
+							<li><a href="#Contact" class="padR0">Contact Us</a></li>
+						</ul>
+					</div>
+					<!--ftrLinkBlock-->
+				</div>
+				<!--col-->
+
+				<div class="col-md-2 col-sm-2">
+					<h2>Other</h2>
+					<ul class="ftrLinks">
+						<li><a href="#" class="anim" data-toggle="modal" data-target="#myModal">Sign In</a></li>
+						<li><a href="#" class="anim" data-toggle="modal" data-target="#sign_up">Join Us</a></li>
+					</ul>
+
+
+				</div>
+				<!--col-->
+
+				<div class="col-md-3 col-sm-3">
+					<h2>Contacts</h2>
+					<div class="ftrContact">
+						<p><i class="fa fa-map-marker"></i> Titiksha eYoga Atelier</p>
+						<p> COTTON HILL ROAD, VAZHUTHACAUD</p>
+						<p>TRIVANDRUM 695014</p>
+                        <p><i class="fa fa-phone"></i>+91 – 6282670673 </p>
+                        <p><i class="fa fa-envelope-o"></i> titikshayogaatelier@gmail.com</p>
+					</div>
+					<!--ftrContact-->
+				</div>
+				<!--col-->
+
+			</div>
+			<!--row-->
+
+		</div>
+		<!--container-->
+
+		<div class="footer_copy">
+			<div class="container">
+				<div class="back_to_top">
+					<a href="#backToTop" class="top"><i class="glyphicon glyphicon-menu-up"></i></a>
+					<div class="copyright"> &copy; 2020 TITIKSHA eYoga Atelier. All Rights Reserved.</div>
+                    <div class="copyright">Powered By 2020, <a href="https://cydeztechnologies.com/" target="blank">CYDEZ TECHNOLOGIES</a></div>
+					<ul class="footerSocial">
+						<li><a href="https://m.facebook.com/profile.php?ref=wizard" target="blank"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://www.instagram.com/titikshayogaatelier/" target="blank"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://twitter.com/AtelierEyoga" target="blank"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://www.youtube.com/channel/UCmPOUsXeqEbj-J5xHUEfZGA" target="blank"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+				</div>
+				<!--back_to_top-->
+
+			</div>
+			<!--container-->
+		</div>
+		<!--footer_copy-->
+
+	</footer>
+
+
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<form action="{% url 'userlogin' %}" method="post">
+			{% csrf_token %}
+			<div class="modal-dialog signInBox">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Sign In</h4>
+					</div>
+					<div class="modal-body">
+						<div class="col-md-12 text-center" id="loadme"></div>
+						<div class="form-group">
+							<input type="tel" required="" pattern="[0-9]{10}" title="Phone number should be 10 digits" required="" name="phone" class="form-control signText" placeholder="Phone Number"/>
+						</div>
+						<div class="form-group">
+							<input type="password" required="" name="password" class="form-control signText"
+								placeholder="Password" />
+						</div>
+						<div style="color: red;">
+							{{ error }}
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-default ">Sign In</button>
+
+							<span class="forgotLink signUpLink" data-toggle="modal" data-target="#sign_up"
+								data-dismiss="modal"> Sign Up</span>
+							<span class="forgotLink" data-toggle="modal" data-target="#forgot_password"
+								data-dismiss="modal"> Forgot password ?</span>
+						</div>
+
+
+					</div>
+					<!--signOuter-->
+				</div>
+				<!--modal-body-->
+				<div class="modal-footer">
+
+				</div>
+			</div>
+		</form>
+	</div>
+
+	</div>
+	<div class="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="buyProgram">
+    
+	    <div class="modal-dialog signInBox">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close closeBtn1" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Alert</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div style="height: 100%;">Please subscribe to view the program</div>
+		      </div>
+		    </div>
+	  </div>
+
+	</div>
+	<!-- forgot password -->
+	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+		id="forgot_password">
+
+		<div class="modal-dialog signInBox">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close closeBtn1" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Forgot Password</h4>
+				</div>
+				<div class="modal-body">
+					<form action="{% url 'reset_password' %}" method="POST">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="exampleInputEmail1">Phone Number</label>
+							<input required="" name="phone" type="text" class="form-control signText" id=""
+								placeholder="Enter phone number">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">New Password</label>
+							<input required="" name="password" type="password" class="form-control signText" id=""
+								placeholder="Enter new password">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Confirm password</label>
+							<input required="" name="confirmpassword" type="password" class="form-control signText"
+								id="" placeholder="Confirm password">
+						</div>
+						<button type="submit" class="btn btn-default signBtn">Submit</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<div id="loadmeforgetpass"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!--begin sign Up-->
+	<div id="sign_up" class="modal fade" role="dialog">
+		<form action="{% url 'userRegister' %}" method="post">
+			{% csrf_token %}
+			<div class="modal-dialog signInBox signUpBox">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Sign Up</h4>
+					</div>
+					<div class="modal-body">
+						<div class="signOuter">
+
+							<div class="col-md-12 text-center" id="loadme"></div>
+
+							<span class="text-danger">* All fields are mandatory.</span>
+
+
+							<div class="row textRow">
+								<div class="col-md-6 textCol">
+
+									<div class="form-group">
+										<input required="" type="text" class="form-control signText" name="first_name"
+											placeholder="First Name" />
+									</div>
+								</div>
+								<!--col-->
+								<div class="col-md-6 textCol">
+									<div class="form-group">
+										<input required="" type="text" class="form-control signText" name="last_name"
+											placeholder="Last Name" />
+									</div>
+								</div>
+								<!--col-->
+							</div>
+							<!--textRow-->
+							<div class="form-group">
+								<input type="text" required="" class="form-control signText" placeholder="Address - 1"
+									name="address" />
+							</div>
+
+							<div class="form-group">
+								<input type="tel" class="form-control signText" placeholder="Phone Number" required=""
+									pattern="[0-9]{10}" title="Phone number must be 10 digits" name="phone" />
+							<span style="color: tomato;">{{request.session.phone}}</span>
+							</div>
+							<div class="form-group">
+								<input type="password" required="" class="form-control signText" placeholder="Password"
+									name="password" />
+							</div>
+
+							<div class="row textRow">
+								<div class="col-md-6 textCol">
+									<div class="form-group">
+										<input name="city" required="" type="text" class="form-control signText"
+											placeholder="City" />
+									</div>
+								</div>
+								<!--col-->
+								<div class="col-md-6 textCol">
+									<div class="form-group">
+										<input type="number" required="" name="postcode" class="form-control signText"
+											pattern=".{6}" title="Post Code Minimum 6 characters" maxlength="6"
+											placeholder="Post Code" />
+									</div>
+								</div>
+								<!--col-->
+							</div>
+							<!--textRow-->
+
+							<div class="row textRow">
+								<div class="col-md-12 textCol">
+									<div class="form-group">
+										<input type="email" required="" class="form-control signText"
+											placeholder="Email" name="email" />
+									</div>
+								</div>
+								<!--col-->
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-default signBtn">Sign Up</button>
+								<span class="forgotLink signUpLink" data-toggle="modal" data-target="#myModal"
+									data-dismiss="modal"> Sign In</span>
+
+
+							</div>
+							<!--textRow-->
+						</div>
+		</form>
+		<!--signOuter-->
+	</div>
+
+	<a  href="#" data-toggle="modal" data-target="#sign_up" id="signupModal" style="display: none;">Sign In</a>
+	<a  href="#" data-toggle="modal" data-target="#myModal" id="login" style="display: none;">Sign In</a>
+	<a  href="#" data-toggle="modal" data-target="#buyProgram" id="buyProgramAlert" style="display: none;"></a>
+	<script src="{% static 'home/assets/js/bootstrap.min.js' %}" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$('#signupform').submit(function (e) {
+				e.preventDefault();
+				$('#loadme').html('<img width="50" src="http://yogademo.kruxsoft.in/app/assets/images/ring-alt_1.gif" alt="loading..." />');
+				if ($('#password').val() == $('#repassword').val()) {
+					$.ajax({
+						url: "http://yogademo.kruxsoft.in/app/users/savedata.html",
+						dataType: "json",
+						method: "POST",
+						data: $(this).serialize(),
+						delay: 250,
+						success: function (res) {
+							if (res['status'] == 1) {
+								$('#loadme').html('<div class="alert12 alert-success text-left">Registered successfully. Redirecting...</div>');
+								location.reload();
+							}
+							else {
+								$('#loadme').html('<div class="alert12 alert-warning text-left">email Id already register.</div>');
+							}
+
+						},
+						error: function (data) {
+							$('#loadme').html('<div class="alert12 alert-danger text-left">Server error occured....</div>');
+						}
+					});
+				}
+				else {
+					$('#loadme').html('<div class="alert12 alert-danger text-left">Passwords are not matching.</div>');
+				}
+
+			});
+			$('#forgotpassword').submit(function (e) {
+				e.preventDefault();
+				$('#loadme').html('<img width="50" src="http://yogademo.kruxsoft.in/app/assets/images/ring-alt_1.gif" alt="loading..." />');
+				if ($('#password').val() == $('#repassword').val()) {
+					$.ajax({
+						url: "http://yogademo.kruxsoft.in/app/users/forgotpassword.html",
+						dataType: "json",
+						method: "POST",
+						data: $(this).serialize(),
+						delay: 250,
+						success: function (res) {
+							if (res['status'] == 1) {
+								$('#loadmeforgetpass').html('<div class="alert12 alert-success text-left">' + res['message'] + '</div>');
+								setTimeout(function () {
+									window.location.href = "index.html";
+								}, 1000);
+
+							}
+							else {
+								$('#loadmeforgetpass').html('<div class="alert12 alert-warning text-left">' + res['message'] + '</div>');
+							}
+
+						},
+						error: function (data) {
+							$('#loadmeforgetpass').html('<div class="alert12 alert-danger text-left">Server error occured....</div>');
+						}
+					});
+				}
+				else {
+					$('#loadme').html('<div class="alert12 alert-danger text-left">Passwords are not matching.</div>');
+				}
+
+			});
+
+			$('#signin').submit(function (e) {
+				e.preventDefault();
+				$('#loadme').html('<img width="50" src="http://yogademo.kruxsoft.in/app/assets/images/ring-alt_1.gif" alt="loading..." />');
+				if ($('#password').val() == $('#repassword').val()) {
+					$.ajax({
+						url: "http://yogademo.kruxsoft.in/app/users/processauthentication.html",
+						dataType: "json",
+						method: "POST",
+						data: $(this).serialize(),
+						delay: 250,
+						success: function (res) {
+							if (res['status'] == 1) {
+								$('#loadme').html('<div class="alert12 alert-success text-left">Logged in successfully. Redirecting...</div>');
+								location.reload();
+							}
+							else {
+								$('#loadme').html('<div class="alert12 alert-warning text-left">Invalid Login details provided.</div>');
+							}
+						},
+						error: function (data) {
+							$('#loadme').html('<div class="alert12 alert-danger text-left">Server error occured....</div>');
+						}
+					});
+				}
+				else {
+					$('#loadme').html('<div class="alert12 alert-danger text-left">Passwords are not matching.</div>');
+				}
+
+			});
+		});
+	</script>
+	<!--begin sticky headr -->
+	<script>
+		var WindowWidth = $(window).width();
+		if (WindowWidth > 767) {
+
+			$(window).scroll(function () {
+				var sticky = $('.sticky'),
+					scroll = $(window).scrollTop();
+				if (scroll >= 100) sticky.addClass('fixed', { duration: 500 });
+				else sticky.removeClass('fixed', { duration: 500 });
+			});
+
+		}
+
+		var WindowWidth = $(window).width();
+		if (WindowWidth < 767) {
+
+			$(".dropdown").click(function () {
+
+				$(this).toggleClass("active");
+
+			})
+
+		}
+
+
+	</script>
+	<!--end sticky header-->
+
+	<script src="{% static 'home/assets/js/wow.js' %}"></script>
+	<script>
+		wow = new WOW(
+			{
+				animateClass: 'animated',
+				offset: 100,
+				callback: function (box) {
+					console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+				}
+			}
+		);
+		wow.init();
+		document.getElementById('moar').onclick = function () {
+			var section = document.createElement('section');
+			section.className = 'section--purple wow fadeInDown';
+			this.parentNode.insertBefore(section, this);
+		};
+	</script>
+	<script>
+
+		$('.top').click(function () {
+			$('html, body').animate({
+				scrollTop: $($(this).attr('href')).offset().top
+			}, 800);
+			return false;
+		});
+	</script>
+
+	<!--begin mobie menu icon transition effect-->
+	<script>
+		$(".navbar-toggle").click(function () {
+			$(this).toggleClass("fixMenu");
+			$(this).find(".menu_trigger").toggleClass("active");
+			$("body").toggleClass("menuBg");
+		});
+	</script>
+	<!--end mobie menu icon transition effect-->
+
+	<!--End isot6op filter -->
+	<script>
+		$(".languageBox").click(function () {
+			$(".languageList").toggleClass("active");
+		});
+	</script>
+	<script>
+		$(".faqTitle").click(function () {
+			//$(".faqContent").slideUp();
+			$(this).closest(".faqList").find(".faqContent").slideToggle();
+			$(this).closest(".faqList").find(".fa-caret-down").toggleClass("fa-caret-up");
+
+		});
+
+	</script>
+	<script type="text/javascript" src="{% static 'home/assets/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'home/assets/appjs/home.js' %}" type="text/javascript"></script>
+</body>
+<script>'undefined' === typeof _trfq || (window._trfq = []); 'undefined' === typeof _trfd && (window._trfd = []), _trfd.push({ 'tccl.baseHost': 'secureserver.net' }), _trfd.push({ 'ap': 'cpsh' }, { 'server': 'sg2plcpnl0189' }) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script>
+<script src='../../img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
+{% if error %}
+<script >
+	document.getElementById('login').click()
+</script>
+{% endif %}
+{% if buyPopup %}
+<script >
+	document.getElementById('buyProgramAlert').click()
+</script>
+{% endif %}
+
+{% if errorPopup %}
+<script >
+	document.getElementById('signupModal').click()
+</script>
+{% endif %}
+
+</html>
