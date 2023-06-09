@@ -12,6 +12,6 @@ import os,sys
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Yoga.settings')
-sys.path.append('/var/www/titikshayoga/cydez-yoga/Yoga')
-sys.path.append('/var/www/titikshayoga/cydez-yoga/Yoga/Yoga')
+sys.path.append('/var/www/cydez-yoga/Yoga')
+sys.path.append('/var/www/cydez-yoga/Yoga/Yoga')
 application = get_wsgi_application()
